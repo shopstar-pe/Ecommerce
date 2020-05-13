@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Behaviors\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Queries\" />
+    <Folder Include="DomainEventHandlers\" />
+    <Folder Include="Commands\AppSettingCommand\" />
+    <Folder Include="Abstractions\" />
+    <Folder Include="Queries\Mapping\" />
+    <Folder Include="Queries\AppSettingQueries\" />
+    <Folder Include="Commands\ProductCommand\Models\" />
+    <Folder Include="Commands\MealCommand\" />
+    <Folder Include="Queries\MealQueries\" />
+    <Folder Include="Commands\AdditionalServiceCommand\Models\" />
+    <Folder Include="Commands\CollectionGroupCommand\" />
+    <Folder Include="Queries\CollectionGroupQueries\" />
+    <Folder Include="Commands\CollectionGroupCommand\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.3" />
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
+    <ProjectReference Include="..\Catalog.Messages\Catalog.Messages.csproj" />
+  </ItemGroup>
+</Project>

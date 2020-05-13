@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>dotnet-Search.Worker-6CC53507-7C4D-4E63-8852-4F5CA13D25DE</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Search.Worker' ">
+    <StartAction>Project</StartAction>
+    <EnvironmentVariables>
+      <Variable name="DOTNET_ENVIRONMENT" value="Development" />
+    </EnvironmentVariables>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="4.1.3" />
+    <PackageReference Include="Microsoft.Azure.Search" Version="10.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Processors\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Catalog\src\Catalog.Messages\Catalog.Messages.csproj" />
+    <ProjectReference Include="..\Search.Index\Search.Index.csproj" />
+  </ItemGroup>
+</Project>
